@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   return (
-    <nav className="shadow drop-shadow-2xl">
+    <nav className="s">
       <div className="flex items-center justify-between px-6 py-4 mx-auto md:container md:px-12">
         <Image
           src="/logo.png"
-          className="w-12 h-12 rounded-full"
+          className="object-cover w-12 h-12"
           width={1000}
           height={1000}
           alt="logo"
@@ -28,10 +28,10 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <Button className="px-4 py-2 text-white duration-300 rounded-full shadow hover:drop-shadow-xl bg-primaryColor poppins-bold hover:bg-primaryColor/80">
-            Hire Me
-          </Button>
         </div>
+        <Button className="px-4 py-2 text-white duration-300 rounded-full shadow hover:drop-shadow-xl bg-primaryColor poppins-bold hover:bg-primaryColor/80">
+          Hire Me
+        </Button>
       </div>
     </nav>
   );
