@@ -84,10 +84,45 @@ export default function OrbitingCirclesDemo() {
         className="size-[50px] border-none bg-transparent"
         radius={160}
         duration={20}
+        reverse
+      >
+        <Icons.laravel />
+      </OrbitingCircles>
+      <OrbitingCircles
+        className="size-[50px] border-none bg-transparent"
+        radius={140}
+        duration={20}
         delay={20}
         reverse
       >
         <Icons.nextjs />
+      </OrbitingCircles>
+      <OrbitingCircles
+        className="size-[50px] border-none bg-transparent"
+        radius={160}
+        duration={20}
+        delay={20}
+        reverse
+      >
+        <Icons.nodejs />
+      </OrbitingCircles>
+      <OrbitingCircles
+        className="size-[50px] border-none bg-transparent"
+        radius={160}
+        duration={20}
+        delay={20}
+        reverse
+      >
+        <Icons.reactnative />
+      </OrbitingCircles>
+      <OrbitingCircles
+        className="size-[50px] border-none bg-transparent"
+        radius={160}
+        duration={20}
+        delay={20}
+        reverse
+      >
+        <Icons.php />
       </OrbitingCircles>
     </div>
   );

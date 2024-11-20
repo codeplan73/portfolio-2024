@@ -16,7 +16,7 @@ const Navbar = () => {
           alt="logo"
         />
         <div className="flex items-center space-x-6">
-          <ul className="flex items-center hidden space-x-6 md:flex">
+          <ul className="items-center hidden space-x-6  md:flex">
             {routes.map((route) => (
               <li key={route.name}>
                 <Link

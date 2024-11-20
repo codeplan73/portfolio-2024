@@ -7,7 +7,7 @@ import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 
 const Hero = () => {
   return (
-    <header className="container flex flex-col-reverse items-center justify-between gap-8 px-12 py-12 mx-auto md:px-24 md:py-20 md:flex-row md:container">
+    <header className="container flex flex-col-reverse items-center justify-between gap-8 py-12 mx-auto md:px-24 md:py-20 md:flex-row md:container">
       <div className="flex flex-col items-start justify-start flex-1 space-y-4">
         <AnimatedShinyText>
           <span className="font-bold text-md"> ✨👋 Hi I am ,</span>
@@ -17,12 +17,16 @@ const Hero = () => {
           Emmanuel Omonzebaguan
         </h4>
 
-        <h2 className="text-4xl poppins-bold text-nowrap">
+        {/* <h2 className="text-4xl poppins-bold text-nowrap">
+          Full-Stack Developer
+        </h2> */}
+        <h2 className="text-2xl text-transparent md:text-4xl text-nowrap poppins-bold bg-gradient-to-b from-slate-800 to-primaryColor bg-clip-text">
           Full-Stack Developer
         </h2>
         <p className="text-lg helvatica">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis
-          commodi tempore aut id voluptatum eveniet velit aspernatur laborum.
+          Innovative and results-driven Full-Stack Web Developer, performance
+          management, and data integration. Skilled in leveraging modern
+          frameworks, languages, to build scalable, robust applications.
         </p>
         <div className="flex items-center justify-center space-x-6 md:justify-start">
           <FaFacebook className="text-2xl text-slate-600 hover:text-primaryColor" />
