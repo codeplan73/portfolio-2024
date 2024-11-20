@@ -17,9 +17,6 @@ const Hero = () => {
           Emmanuel Omonzebaguan
         </h4>
 
-        {/* <h2 className="text-4xl poppins-bold text-nowrap">
-          Full-Stack Developer
-        </h2> */}
         <h2 className="text-2xl text-transparent md:text-4xl text-nowrap poppins-bold bg-gradient-to-b from-slate-800 to-primaryColor bg-clip-text">
           Full-Stack Developer
         </h2>

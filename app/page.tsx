@@ -2,7 +2,8 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import About from "@/components/About";
 import Project from "@/components/Project";
-import Testomonial from "@/components/Testomonial";
+import Testimonial from "@/components/Testimonial";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -28,7 +29,11 @@ export default function Home() {
           className="px-6 py-8 bg-slate-100 md:py-20 md:px-24"
           id="testimonials"
         >
-          <Testomonial />
+          <Testimonial />
+        </section>
+
+        <section className="px-6 py-8 bg-white md:py-20 md:px-24" id="contact">
+          <Contact />
         </section>
       </main>
     </div>
