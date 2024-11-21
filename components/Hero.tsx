@@ -47,9 +47,13 @@ const Hero = () => {
           <Button className="px-4 py-2 text-white duration-300 rounded-full shadow hover:drop-shadow-xl bg-primaryColor poppins-bold hover:bg-primaryColor/80">
             Get in Touch
           </Button>
-          <Button className="px-4 py-2 duration-300 bg-white border rounded-full shadow text-primaryColor hover:drop-shadow-xl border-primaryColor poppins-bold">
+          <Link
+            href="/cv/Omonzebaguan-frontend-erpf.pdf"
+            target="_blank"
+            className="px-4 py-2 duration-300 bg-white border rounded-full shadow text-primaryColor hover:drop-shadow-xl border-primaryColor poppins-bold"
+          >
             Downlaod CV
-          </Button>
+          </Link>
         </div>
       </div>
       <div className="flex items-center justify-center flex-1">
