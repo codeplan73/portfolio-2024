@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { routes } from "@/utils/contant";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+// import { LuMenu } from "react-icons/lu";
 
 const Navbar = () => {
   return (
@@ -16,7 +16,7 @@ const Navbar = () => {
           alt="logo"
         />
         <div className="flex items-center space-x-6">
-          <ul className="items-center hidden space-x-6  md:flex">
+          <ul className="items-center hidden space-x-6 md:flex">
             {routes.map((route) => (
               <li key={route.name}>
                 <Link
@@ -29,9 +29,13 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <Button className="px-4 py-2 text-white duration-300 rounded-full shadow hover:drop-shadow-xl bg-primaryColor poppins-bold hover:bg-primaryColor/80">
+        <Link
+          href="#contact"
+          className="px-4 py-2 text-white duration-300 rounded-full shadow hover:drop-shadow-xl bg-primaryColor poppins-bold hover:bg-primaryColor/80"
+        >
           Hire Me
-        </Button>
+        </Link>
+        {/* <LuMenu className="w-6 h-6 text-primaryColor md:hidden" /> */}
       </div>
     </nav>
   );

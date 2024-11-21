@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { FaGithub, FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -26,11 +27,21 @@ const Hero = () => {
           frameworks, languages, to build scalable, robust applications.
         </p>
         <div className="flex items-center justify-center space-x-6 md:justify-start">
-          <FaFacebook className="text-2xl text-slate-600 hover:text-primaryColor" />
-          <FaGithub className="text-2xl text-slate-600 hover:text-primaryColor" />
-          <FaInstagram className="text-2xl text-slate-600 hover:text-primaryColor" />
-          <FaXTwitter className="text-2xl text-slate-600 hover:text-primaryColor" />
-          <FaLinkedin className="text-2xl text-slate-600 hover:text-primaryColor" />
+          <Link href="" target="_blank">
+            <FaFacebook className="text-2xl text-slate-600 hover:text-primaryColor" />
+          </Link>
+          <Link href="https://github.com/codeplan73" target="_blank">
+            <FaGithub className="text-2xl text-slate-600 hover:text-primaryColor" />
+          </Link>
+          <Link href="" target="_blank">
+            <FaInstagram className="text-2xl text-slate-600 hover:text-primaryColor" />
+          </Link>
+          <Link href="https://x.com/codecps" target="_blank">
+            <FaXTwitter className="text-2xl text-slate-600 hover:text-primaryColor" />
+          </Link>
+          <Link href="https://www.linkedin.com/in/codeplan/" target="_blank">
+            <FaLinkedin className="text-2xl text-slate-600 hover:text-primaryColor" />
+          </Link>
         </div>
         <div className="flex items-center justify-center space-x-4 md:justify-start">
           <Button className="px-4 py-2 text-white duration-300 rounded-full shadow hover:drop-shadow-xl bg-primaryColor poppins-bold hover:bg-primaryColor/80">

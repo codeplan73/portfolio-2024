@@ -1,7 +1,26 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import { TfiEmail } from "react-icons/tfi";
+import { useForm } from "@formspree/react";
+import Swal from "sweetalert2";
+import "sweetalert2/src/sweetalert2.scss";
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm("mpwaaqda");
+  const formRef = useRef<HTMLFormElement>(null);
+
+  if (state.succeeded) {
+    Swal.fire({
+      title: "Success",
+      text: "Thank you for your message. We will get back to you shortly.",
+      icon: "success",
+      confirmButtonText: "OK",
+    });
+
+    formRef.current?.reset();
+  }
+
   return (
     <div className="container flex flex-col items-center justify-center gap-8 mx-auto md:gap-8">
       <div className="flex flex-col items-center justify-center w-full md:w-1/2">
@@ -30,13 +49,18 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <form className="flex flex-col w-full gap-6 md:w-2/3" action="">
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className="flex flex-col w-full gap-6 md:w-2/3"
+        >
           <div className="flex flex-col gap-4 md:flex-row">
             <div className="flex flex-col flex-1 w-full gap-2">
               <label htmlFor="name">Fullname</label>
               <input
                 type="text"
                 name="name"
+                disabled={state.submitting}
                 id="name"
                 placeholder="Enter your name"
                 className="w-full p-2 border outline-none rounded-xl border-slate-300 focus:border-primaryColor"
@@ -46,7 +70,8 @@ const Contact = () => {
               <label htmlFor="name">Email</label>
               <input
                 type="email"
-                name="name"
+                disabled={state.submitting}
+                name="email"
                 placeholder="Enter your email"
                 id="name"
                 className="w-full p-2 border outline-none rounded-xl border-slate-300 focus:border-primaryColor"
@@ -56,12 +81,17 @@ const Contact = () => {
           <div className="flex flex-col flex-1 w-full gap-2">
             <label htmlFor="name">Message</label>
             <textarea
+              name="message"
+              disabled={state.submitting}
               placeholder="Tell us what you want"
               className="p-2 border outline-none w-sfull rounded-xl border-slate-300 focus:border-primaryColor"
             />
           </div>
-          <button className="px-4 w-full md:w-[200px] py-3 duration-300 bg-white border rounded-full shadow hover:text-white hover:bg-primaryColor text-primaryColor hover:drop-shadow-xl border-primaryColor poppins-bold">
-            Submit
+          <button
+            disabled={state.submitting}
+            className="px-4 w-full md:w-[200px] py-3 duration-300 bg-white border rounded-full shadow hover:text-white hover:bg-primaryColor text-primaryColor hover:drop-shadow-xl border-primaryColor poppins-bold"
+          >
+            {state.submitting ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>

@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Project from "@/components/Project";
 import Testimonial from "@/components/Testimonial";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
           <Contact />
         </section>
       </main>
+      <Footer />
     </div>
   );
 }
