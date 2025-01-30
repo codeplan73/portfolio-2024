@@ -1,50 +1,94 @@
-import React from "react";
+"use client"; // Add this directive for client-side rendering
+
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 type Project = {
   id: number;
   image: string;
-  linkDemoLive?: string;
+  title: string;
+  description: string;
+  techStack: string[];
+  linkDemoLive: string;
+  linkGithub?: string;
 };
 
 const projects: Project[] = [
   {
     id: 1,
     image: "/projects/project-1.png",
+    title: "Linos Booking",
+    description: "A booking platform for hotels and resorts.",
+    techStack: ["React", "Next.js", "Tailwind CSS"],
     linkDemoLive: "https://linosbooking.vercel.app/",
+    linkGithub: "https://github.com/yourusername/linos-booking",
   },
   {
     id: 2,
     image: "/projects/project-2.png",
+    title: "Idea Colleges",
+    description: "An educational platform for students and teachers.",
+    techStack: ["React", "Node.js", "MongoDB"],
     linkDemoLive: "https://ideacolleges.com/",
+    linkGithub: "https://github.com/yourusername/idea-colleges",
   },
   {
     id: 3,
     image: "/projects/project-3.png",
+    title: "Frimatech",
+    description: "A tech company website showcasing services and products.",
+    techStack: ["React", "Next.js", "Tailwind CSS"],
     linkDemoLive: "https://frimatech.vercel.app/",
+    linkGithub: "https://github.com/yourusername/frimatech",
   },
   {
     id: 4,
     image: "/projects/project-4.png",
+    title: "Linos Touch",
+    description: "A landing page for a digital marketing agency.",
+    techStack: ["HTML", "CSS", "JavaScript"],
     linkDemoLive: "https://linostouch.com/",
   },
   {
     id: 5,
     image: "/projects/project-5.png",
+    title: "Timbu Cloud Shop",
+    description: "An e-commerce platform for cloud services.",
+    techStack: ["React", "Node.js", "Express"],
     linkDemoLive: "https://hng-task2-timbucloudshop.vercel.app/",
+    linkGithub: "https://github.com/yourusername/timbu-cloud-shop",
   },
   {
     id: 6,
     image: "/projects/project-6.png",
+    title: "Parcel Tracking",
+    description: "A parcel tracking system for logistics companies.",
+    techStack: ["React", "Firebase", "Tailwind CSS"],
     linkDemoLive: "https://parcel-tracking-two.vercel.app/",
+    linkGithub: "https://github.com/yourusername/parcel-tracking",
   },
 ];
 
 const Project = () => {
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true, // Only animate once
+    });
+  }, []);
+
   return (
     <div className="container flex flex-col items-center justify-center gap-8 mx-auto md:gap-8">
-      <div className="flex flex-col items-center justify-center w-full md:w-1/2">
+      {/* Portfolio Title and Description */}
+      <div
+        className="flex flex-col items-center justify-center w-full md:w-1/2"
+        data-aos="fade-up"
+      >
         <h1 className="text-xl text-center text-transparent md:text-4xl poppins-bold bg-gradient-to-b from-slate-800 to-primaryColor bg-clip-text">
           Portfolio
         </h1>
@@ -56,23 +100,67 @@ const Project = () => {
           designs.
         </p>
       </div>
+
+      {/* Project Cards */}
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="flex flex-col items-center justify-center w-full max-w-lg p-2 ease-in-out bg-white shadow-sm hover:drop-shadow-lg rounded-xl"
+            className="flex flex-col items-center justify-center w-full max-w-lg p-4 bg-white shadow-sm hover:drop-shadow-lg rounded-xl"
+            data-aos="fade-up"
+            data-aos-delay={project.id * 100} // Stagger animations
           >
+            {/* Project Thumbnail */}
             <Image
               src={project.image}
-              alt={`Project ${project.id}`}
+              alt={`Project ${project.title}`}
               width={500}
-              height={500}
-              className="w-full h-auto p-2 bg-primaryColor/15 rounded-xl"
+              height={300}
+              className="w-full h-auto rounded-lg"
             />
-            <div className="flex items-center justify-center pt-2">
-              <Link target="_blank" href={project.linkDemoLive || "#"}>
-                Demo/Live
+
+            {/* Project Title and Description */}
+            <div className="mt-4 text-center">
+              <h3 className="text-xl font-semibold text-primaryColor">
+                {project.title}
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
+                {project.description}
+              </p>
+            </div>
+
+            {/* Tech Stack Icons */}
+            <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
+              {project.techStack.map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 text-sm text-slate-600 bg-slate-100 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            {/* Links to Live Demo and GitHub */}
+            <div className="flex items-center justify-center gap-4 mt-4">
+              <Link
+                href={project.linkDemoLive}
+                target="_blank"
+                className="flex items-center gap-2 px-4 py-2 text-white duration-300 rounded-full bg-primaryColor hover:bg-primaryColor/80"
+              >
+                <FaExternalLinkAlt className="w-4 h-4" />
+                Live Demo
               </Link>
+              {project.linkGithub && (
+                <Link
+                  href={project.linkGithub}
+                  target="_blank"
+                  className="flex items-center gap-2 px-4 py-2 text-primaryColor duration-300 bg-white border rounded-full border-primaryColor hover:bg-slate-100"
+                >
+                  <FaGithub className="w-4 h-4" />
+                  GitHub
+                </Link>
+              )}
             </div>
           </div>
         ))}
