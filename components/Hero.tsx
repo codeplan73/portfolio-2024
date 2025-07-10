@@ -1,9 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { FaGithub, FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaFacebook,
+  FaInstagram,
+  FaPlayCircle,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import Link from "next/link";
@@ -15,7 +21,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2, // Stagger animations for children
+      staggerChildren: 0.2,
     },
   },
 };
@@ -34,7 +40,18 @@ const imageVariants = {
   },
 };
 
+const videoVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+};
+
 const Hero = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const toggleVideo = () => {
+    setShowVideo(!showVideo);
+  };
+
   return (
     <motion.header
       className="container flex flex-col-reverse items-center justify-between gap-8 py-12 mx-auto md:px-24 md:py-20 md:flex-row md:container"
@@ -92,6 +109,12 @@ const Hero = () => {
           <Link href="https://www.linkedin.com/in/codeplan/" target="_blank">
             <FaLinkedin className="text-2xl text-slate-600 hover:text-primaryColor" />
           </Link>
+          <button
+            onClick={toggleVideo}
+            aria-label="Play professional summary video"
+          >
+            <FaPlayCircle className="text-2xl text-slate-600 hover:text-primaryColor" />
+          </button>
         </motion.div>
 
         <motion.div
@@ -102,13 +125,70 @@ const Hero = () => {
             Get in Touch
           </Button>
           <Link
-            href="/cv/Omonzebaguan-frontend-erpf.pdf"
+            href="/cv/EMMANUEL OMONZEBAGUAN_Frontend Developer.pdf"
             target="_blank"
             className="px-4 py-2 duration-300 bg-white border rounded-full shadow text-primaryColor hover:drop-shadow-xl border-primaryColor poppins-bold"
           >
             Download CV
           </Link>
         </motion.div>
+        <motion.div variants={itemVariants}>
+          <button
+            onClick={toggleVideo}
+            className="flex items-center gap-2 mt-2 text-primaryColor hover:text-primaryColor/80"
+          >
+            <FaPlayCircle className="text-2xl" />
+            <span className="underline">Watch My Professional Summary</span>
+          </button>
+        </motion.div>
+
+        {/* Video Modal */}
+        {showVideo && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+            variants={videoVariants}
+            initial="hidden"
+            animate="visible"
+            onClick={toggleVideo}
+          >
+            <div
+              className="relative w-full max-w-2xl p-4 bg-white rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="absolute top-2 right-2 text-2xl text-slate-600 hover:text-primaryColor"
+                onClick={toggleVideo}
+                aria-label="Close video"
+              >
+                &times;
+              </button>
+              <div
+                className="relative w-full"
+                style={{ paddingBottom: "56.25%" }}
+              >
+                {/* <iframe
+                  src="https://youtu.be/yLplG7EUbeM?si=_jhxTINYFcSFkaXE"
+                  // webkitallowfullscreen
+                  // mozallowfullscreen
+                  // allowfullscreen
+             
+                       className="absolute top-0 left-0 w-full h-full"
+                  // style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                ></iframe> */}
+                <iframe
+                  // width="560"
+                  // height="315"
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/yLplG7EUbeM?si=_jhxTINYFcSFkaXE&amp;controls=0&amp;start=6"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  // referrerpolicy="strict-origin-when-cross-origin"
+                  // allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </motion.div>
+        )}
       </motion.div>
 
       {/* Right Section - Profile Image */}
