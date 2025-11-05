@@ -33,7 +33,7 @@ const projects: Project[] = [
       "Sanity Studio",
       "Paystack",
     ],
-    linkDemoLive: "https://cilias-health-care-foundation-dfhsxgas5.vercel.app/",
+    linkDemoLive: "https://ciliaswomenhealthcarefoundation.com/",
   },
   {
     id: 2,
