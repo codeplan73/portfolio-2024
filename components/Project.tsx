@@ -20,6 +20,23 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
+    image: "/projects/project-7.png",
+    title: "Cilias Health Foundation Website",
+    description:
+      "Cilias Women’s Healthcare Foundation and Wellness Center is committed to empowering women through education, advocacy, and accessible healthcare services — fostering healthier families and stronger communities",
+    techStack: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Zustand",
+      "API",
+      "Sanity Studio",
+      "Paystack",
+    ],
+    linkDemoLive: "https://cilias-health-care-foundation-dfhsxgas5.vercel.app/",
+  },
+  {
+    id: 2,
     image: "/projects/walrus-tech.png",
     title: "Corperate Website",
     description:
@@ -28,7 +45,7 @@ const projects: Project[] = [
     linkDemoLive: "https://thewalrustech.com",
   },
   {
-    id: 2,
+    id: 3,
     image: "/projects/project-2.png",
     title: "Hria Colleges",
     description: "An educational platform for students and teachers.",
@@ -36,7 +53,7 @@ const projects: Project[] = [
     linkDemoLive: "https://hiracolleges.com/",
   },
   {
-    id: 3,
+    id: 4,
     image: "/projects/tmm.png",
     title: "The-Middle-Man",
     description:
@@ -45,7 +62,7 @@ const projects: Project[] = [
     linkDemoLive: "https://www.themiddleman.ng/",
   },
   {
-    id: 4,
+    id: 5,
     image: "/projects/project-1.png",
     title: "Linos Booking (Modernized)",
     description: "A booking platform for cleaning servics.",
@@ -54,7 +71,7 @@ const projects: Project[] = [
     linkGithub: "https://github.com/codeplan73",
   },
   {
-    id: 5,
+    id: 6,
     image: "/projects/project-3.png",
     title: "Frimatech",
     description: "A tech company website showcasing services and products.",
@@ -62,34 +79,26 @@ const projects: Project[] = [
     linkDemoLive: "https://frimatech.vercel.app/",
     linkGithub: "https://github.com/codeplan73",
   },
-  {
-    id: 6,
-    image: "/projects/project-4.png",
-    title: "Linos Touch",
-    description: "A booking platform for cleaning company.",
-    techStack: ["HTML", "CSS", "BootStrap", "JavaScript", "PHP/MySQL"],
-    linkDemoLive: "https://linostouch.com/",
-    linkGithub: "https://github.com/codeplan73",
-  },
   // {
-  //   id: 5,
-  //   image: "/projects/project-5.png",
-  //   title: "Timbu Cloud Shop",
-  //   description: "An e-commerce platform for cloud services.",
-  //   techStack: ["React", "Nextjs", "Tailwind CSS"],
-  //   linkDemoLive: "https://hng-task2-timbucloudshop.vercel.app/",
+  //   id: 6,
+  //   image: "/projects/project-4.png",
+  //   title: "Linos Touch",
+  //   description: "A booking platform for cleaning company.",
+  //   techStack: ["HTML", "CSS", "BootStrap", "JavaScript", "PHP/MySQL"],
+  //   linkDemoLive: "https://linostouch.com/",
   //   linkGithub: "https://github.com/codeplan73",
   // },
-  {
-    id: 7,
-    image: "/projects/project-6.png",
-    title: "Logistics (Clone GIG - MERN Stack)",
-    description:
-      "A parcel tracking system for logistics companies cloned using MERN Stack",
-    techStack: ["React", "Nodejs", "Tailwind CSS", "Express", "MongoDB"],
-    linkDemoLive: "https://parcel-tracking-two.vercel.app/",
-    linkGithub: "https://github.com/codeplan73",
-  },
+
+  // {
+  //   id: 7,
+  //   image: "/projects/project-6.png",
+  //   title: "Logistics (Clone GIG - MERN Stack)",
+  //   description:
+  //     "A parcel tracking system for logistics companies cloned using MERN Stack",
+  //   techStack: ["React", "Nodejs", "Tailwind CSS", "Express", "MongoDB"],
+  //   linkDemoLive: "https://parcel-tracking-two.vercel.app/",
+  //   linkGithub: "https://github.com/codeplan73",
+  // },
 ];
 
 const Project = () => {
@@ -125,7 +134,7 @@ const Project = () => {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="flex flex-col items-center justify-center w-full max-w-lg p-4 bg-white shadow-sm hover:drop-shadow-lg rounded-xl"
+            className="flex flex-col items-center justify-center w-full max-w-lg p-4 bg-white shadow-sm hover:drop-shadow-lg rounded-xl overflow-hidden"
             data-aos="fade-up"
             data-aos-delay={project.id * 100} // Stagger animations
           >
@@ -135,7 +144,7 @@ const Project = () => {
               alt={`Project ${project.title}`}
               width={500}
               height={300}
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto rounded-xl"
             />
 
             {/* Project Title and Description */}

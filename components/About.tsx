@@ -74,7 +74,7 @@ const About = () => {
             className="text-sm text-center md:text-start text-slate-600 md:text-lg helvetica"
             variants={itemVariants}
           >
-            {`I specialize in crafting accessible, interactive, and visually stunning websites tailored to your unique needs. With expertise in cutting-edge web technologies like JavaScript, React, and Next.js, I bring your ideas to life. Whether you're an independent artisan, creator, or business owner, I deliver websites that captivate and engage your audience. My robust backend skills in PHP/MySQL, Laravel, and Node.js/Express ensure seamless functionality and a reliable user experience. Let's build something exceptional together!`}
+            {`I specialize in crafting accessible, interactive, and visually stunning websites tailored to your unique needs. With expertise in cutting-edge web technologies like JavaScript, React, and Next.js, I bring your ideas to life. Whether you're an independent artisan, creator, or business owner, I deliver websites that captivate and engage your audience. My robust backend skills in Laravel, and Node.js/Express ensure seamless functionality and a reliable user experience. Let's build something exceptional together!`}
           </motion.p>
 
           {/* Cards Section */}
