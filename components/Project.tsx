@@ -97,9 +97,7 @@ const projects: Project[] = [
 
 const filterTabs: ProjectCategory[] = [
   "All",
-  "Full-Stack",
-  "Frontend",
-  "Backend",
+  ...Array.from(new Set(projects.map((p) => p.category))),
 ];
 
 const containerVariants = {
