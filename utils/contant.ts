@@ -4,12 +4,12 @@ export const routes = [
     path: "/",
   },
   {
-    name: "About Me",
+    name: "About",
     path: "/#about",
   },
   {
-    name: "Services",
-    path: "/#servcies",
+    name: "Skills",
+    path: "/#skills",
   },
   {
     name: "Projects",

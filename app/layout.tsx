@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     description:
       "Hire Emmanuel Omonzebaguan for professional full-stack development services. Specializing in modern frontend technologies like React.js and Next.js, and robust backend systems with Node.js and databases, Emmanuel delivers custom web solutions tailored to your needs.",
     type: "website",
-    url: "hhttps://codeplan.vercel.app/",
+    url: "https://codeplan.vercel.app/",
     images: [
       {
         url: "https://codeplan.vercel.app/profile.png",
@@ -92,7 +92,7 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://codeplan.vercel.app/profile.png"
+          content="https://codeplan.vercel.app/"
         />
         <meta
           property="og:image"

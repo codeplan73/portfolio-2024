@@ -18,9 +18,9 @@
     "framer-motion": "^12.0.6",
     "lucide-react": "^0.456.0",
     "motion": "^12.0.6",
-    "next": "^14.0.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "16.2.12",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
     "react-icons": "^5.3.0",
     "sass": "^1.81.0",
     "sharp": "^0.33.5",
@@ -31,12 +31,16 @@
   "devDependencies": {
     "@types/aos": "^3.0.7",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
     "eslint": "^8",
-    "eslint-config-next": "15.0.3",
+    "eslint-config-next": "16.2.12",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "overrides": {
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4"
   }
 }

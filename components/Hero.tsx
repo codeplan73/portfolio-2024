@@ -3,26 +3,17 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaFacebook,
-  FaInstagram,
-  FaPlayCircle,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaPlayCircle } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-// Animation variants for staggered effects
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
+    transition: { staggerChildren: 0.2 },
   },
 };
 
@@ -31,26 +22,17 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const imageVariants = {
+const imageVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { type: "spring", stiffness: 100 },
+    transition: { type: "spring" as const, stiffness: 100 },
   },
-};
-
-const videoVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
 };
 
 const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
-
-  const toggleVideo = () => {
-    setShowVideo(!showVideo);
-  };
 
   return (
     <motion.header
@@ -66,98 +48,115 @@ const Hero = () => {
       >
         <motion.div variants={itemVariants}>
           <AnimatedShinyText>
-            <span className="font-bold text-md"> ✨👋 Hi I am ,</span>
+            <span className="font-bold text-md">Hi, I am</span>
           </AnimatedShinyText>
         </motion.div>
 
         <motion.h4
-          className="text-2xl font-semibold text-primaryColor text-nowrap"
+          className="text-2xl font-semibold text-primaryColor"
           variants={itemVariants}
         >
           Emmanuel Omonzebaguan
         </motion.h4>
 
         <motion.h2
-          className="text-2xl text-transparent md:text-4xl text-nowrap poppins-bold bg-gradient-to-b from-slate-800 to-primaryColor bg-clip-text"
+          className="text-3xl text-white md:text-5xl poppins-bold"
           variants={itemVariants}
         >
           Full-Stack Developer
         </motion.h2>
 
-        <motion.p className="text-lg helvatica" variants={itemVariants}>
-          Innovative and results-driven Full-Stack Web Developer, performance
-          management, and data integration. Skilled in leveraging modern
-          frameworks, languages, to build scalable, robust applications.
-        </motion.p>
-
-        <motion.div
-          className="flex items-center justify-center space-x-6 md:justify-start"
+        <motion.p
+          className="max-w-lg text-base leading-relaxed text-slate-400"
           variants={itemVariants}
         >
-          <Link href="" target="_blank">
-            <FaFacebook className="text-2xl text-slate-600 hover:text-primaryColor" />
+          I build complete web applications, from polished frontend interfaces
+          to robust backend systems. I specialize in React, Next.js, Node.js,
+          and modern JavaScript, delivering solutions that are fast, scalable,
+          and a pleasure to use.
+        </motion.p>
+
+        {/* Social icons */}
+        <motion.div
+          className="flex items-center justify-center space-x-5 md:justify-start"
+          variants={itemVariants}
+        >
+          <Link
+            href="https://github.com/codeplan73"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <FaGithub className="text-xl text-slate-400 hover:text-primaryColor transition-colors duration-200" />
           </Link>
-          <Link href="https://github.com/codeplan73" target="_blank">
-            <FaGithub className="text-2xl text-slate-600 hover:text-primaryColor" />
+          <Link
+            href="https://x.com/codecps"
+            target="_blank"
+            aria-label="X (Twitter)"
+          >
+            <FaXTwitter className="text-xl text-slate-400 hover:text-primaryColor transition-colors duration-200" />
           </Link>
-          <Link href="" target="_blank">
-            <FaInstagram className="text-2xl text-slate-600 hover:text-primaryColor" />
-          </Link>
-          <Link href="https://x.com/codecps" target="_blank">
-            <FaXTwitter className="text-2xl text-slate-600 hover:text-primaryColor" />
-          </Link>
-          <Link href="https://www.linkedin.com/in/codeplan/" target="_blank">
-            <FaLinkedin className="text-2xl text-slate-600 hover:text-primaryColor" />
+          <Link
+            href="https://www.linkedin.com/in/codeplan/"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin className="text-xl text-slate-400 hover:text-primaryColor transition-colors duration-200" />
           </Link>
           <button
-            onClick={toggleVideo}
+            onClick={() => setShowVideo(true)}
             aria-label="Play professional summary video"
           >
-            <FaPlayCircle className="text-2xl text-slate-600 hover:text-primaryColor" />
+            <FaPlayCircle className="text-xl text-slate-400 hover:text-primaryColor transition-colors duration-200" />
           </button>
         </motion.div>
 
+        {/* CTAs */}
         <motion.div
           className="flex items-center justify-center space-x-4 md:justify-start"
           variants={itemVariants}
         >
-          <Button className="px-4 py-2 text-white duration-300 rounded-full shadow hover:drop-shadow-xl bg-primaryColor poppins-bold hover:bg-primaryColor/80">
-            Get in Touch
-          </Button>
           <Link
-            href="/cv/EMMANUEL OMONZEBAGUAN_Frontend Developer.pdf"
+            href="#contact"
+            className="px-5 py-2.5 text-sm text-white duration-300 rounded-full shadow-lg bg-primaryColor poppins-bold hover:bg-primaryColor/80 hover:shadow-primaryColor/25"
+          >
+            Get in Touch
+          </Link>
+          <Link
+            href="/cv/Emmanuel-Omonzebaguan-Frontend-CV.pdf"
             target="_blank"
-            className="px-4 py-2 duration-300 bg-white border rounded-full shadow text-primaryColor hover:drop-shadow-xl border-primaryColor poppins-bold"
+            className="px-5 py-2.5 text-sm duration-300 border rounded-full text-primaryColor hover:text-white border-primaryColor hover:bg-primaryColor poppins-bold transition-colors"
           >
             Download CV
           </Link>
         </motion.div>
+
         <motion.div variants={itemVariants}>
           <button
-            onClick={toggleVideo}
-            className="flex items-center gap-2 mt-2 text-primaryColor hover:text-primaryColor/80"
+            onClick={() => setShowVideo(true)}
+            className="flex items-center gap-2 text-sm transition-colors text-slate-400 hover:text-primaryColor"
           >
-            <FaPlayCircle className="text-2xl" />
-            <span className="underline">Watch My Professional Summary</span>
+            <FaPlayCircle className="text-lg" />
+            <span className="underline underline-offset-4">
+              Watch My Professional Summary
+            </span>
           </button>
         </motion.div>
 
         {/* Video Modal */}
         {showVideo && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-            variants={videoVariants}
-            initial="hidden"
-            animate="visible"
-            onClick={toggleVideo}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            onClick={() => setShowVideo(false)}
           >
             <div
-              className="relative w-full max-w-2xl p-4 bg-white rounded-lg"
+              className="relative w-full max-w-2xl p-4 rounded-lg bg-slate-900 border border-slate-700"
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                className="absolute top-2 right-2 text-2xl text-slate-600 hover:text-primaryColor"
-                onClick={toggleVideo}
+                className="absolute -top-3 -right-3 w-8 h-8 flex items-center justify-center rounded-full bg-slate-800 border border-slate-600 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
+                onClick={() => setShowVideo(false)}
                 aria-label="Close video"
               >
                 &times;
@@ -166,25 +165,12 @@ const Hero = () => {
                 className="relative w-full"
                 style={{ paddingBottom: "56.25%" }}
               >
-                {/* <iframe
-                  src="https://youtu.be/yLplG7EUbeM?si=_jhxTINYFcSFkaXE"
-                  // webkitallowfullscreen
-                  // mozallowfullscreen
-                  // allowfullscreen
-             
-                       className="absolute top-0 left-0 w-full h-full"
-                  // style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                ></iframe> */}
                 <iframe
-                  // width="560"
-                  // height="315"
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/yLplG7EUbeM?si=_jhxTINYFcSFkaXE&amp;controls=0&amp;start=6"
+                  className="absolute top-0 left-0 w-full h-full rounded-lg"
+                  src="https://www.youtube.com/embed/yLplG7EUbeM?si=_jhxTINYFcSFkaXE&controls=0&start=6"
                   title="YouTube video player"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  // referrerpolicy="strict-origin-when-cross-origin"
-                  // allowfullscreen
-                ></iframe>
+                />
               </div>
             </div>
           </motion.div>
@@ -196,13 +182,16 @@ const Hero = () => {
         className="flex items-center justify-center flex-1"
         variants={imageVariants}
       >
-        <Image
-          src="/profile.png"
-          width={1000}
-          height={1000}
-          className="object-fit md:object-cover border-2 rounded-full md:rounded-full w-[200px] h-[200px] md:h-96 md:w-96 border-primaryColor"
-          alt="hero"
-        />
+        <div className="relative">
+          <div className="absolute inset-0 rounded-full bg-primaryColor/20 blur-3xl" />
+          <Image
+            src="/profile.png"
+            width={1000}
+            height={1000}
+            className="relative object-cover border-2 rounded-full w-[200px] h-[200px] md:h-96 md:w-96 border-primaryColor shadow-[0_0_40px_rgba(253,111,0,0.15)]"
+            alt="Emmanuel Omonzebaguan"
+          />
+        </div>
       </motion.div>
     </motion.header>
   );
