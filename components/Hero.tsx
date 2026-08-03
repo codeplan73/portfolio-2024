@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Button } from "./ui/button";
 import { FaGithub, FaLinkedin, FaPlayCircle } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
@@ -122,7 +121,7 @@ const Hero = () => {
             Get in Touch
           </Link>
           <Link
-            href="/cv/Emmanuel-Omonzebaguan-Frontend-CV.pdf"
+            href="/cv/Emmanuel-Omonzebaguan-cv.pdf"
             target="_blank"
             className="px-5 py-2.5 text-sm duration-300 border rounded-full text-primaryColor hover:text-white border-primaryColor hover:bg-primaryColor poppins-bold transition-colors"
           >
