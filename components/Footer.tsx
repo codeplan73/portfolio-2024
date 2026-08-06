@@ -19,14 +19,14 @@ const Footer = () => {
         {/* Links */}
         <div className="flex items-center gap-6">
           <Link
-            href="/cv/Emmanuel-Omonzebaguan-Frontend-CV.pdf"
+            href="/cv/Emmanuel_Omonzebaguan_Frontend_Engineer.pdf"
             target="_blank"
             className="text-sm text-slate-400 hover:text-primaryColor transition-colors"
           >
             Download CV
           </Link>
           <Link
-            href="https://github.com/codeplan73"
+            href="https://github.com/codewithomonz"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -35,7 +35,7 @@ const Footer = () => {
             <FaGithub className="w-4 h-4" />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/codeplan/"
+            href="https://www.linkedin.com/in/codewithomonz/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -44,7 +44,7 @@ const Footer = () => {
             <FaLinkedin className="w-4 h-4" />
           </Link>
           <Link
-            href="https://x.com/codecps"
+            href="https://x.com/codewithomonz"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="X (Twitter)"

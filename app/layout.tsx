@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Full-Stack Developer Services | Emmanuel Omonzebaguan",
+  title: "Frontend Engineer | Emmanuel Omonzebaguan",
   description:
     "Offering professional development services, Emmanuel Omonzebaguan specializes in building modern web applications, responsive frontend interfaces, and scalable backend systems. Explore services in React.js, Next.js, Node.js, and database integration.",
   keywords: [
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
     "I need a web developer",
   ],
   openGraph: {
-    title: "Full-Stack Developer Services | Emmanuel Omonzebaguan",
+    title: "Frontend Engineer | Emmanuel Omonzebaguan",
     description:
-      "Hire Emmanuel Omonzebaguan for professional full-stack development services. Specializing in modern frontend technologies like React.js and Next.js, and robust backend systems with Node.js and databases, Emmanuel delivers custom web solutions tailored to your needs.",
+      "Frontend Engineer with 4+ years building production-grade web applications in React.js, Next.js, and TypeScript across SaaS, fintech, and healthcare. Open to remote roles.",
     type: "website",
     url: "https://codeplan.vercel.app/",
     images: [
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@codecps",
-    title: "Full-Stack Developer Services | Emmanuel Omonzebaguan",
+    title: "Frontend Engineer | Emmanuel Omonzebaguan",
     description:
       "Explore professional services in frontend and backend development by Emmanuel Omonzebaguan. From modern web interfaces to scalable backend systems, Emmanuel is your go-to developer for React.js, Next.js, and Node.js solutions.",
     images: ["https://codeplan.vercel.app/profile.png"],
@@ -75,7 +75,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Offering professional full-stack development services, Emmanuel Omonzebaguan specializes in building modern web applications, responsive frontend interfaces, and scalable backend systems. Explore services in React.js, Next.js, Node.js, and database integration."
+          content="Frontend Engineer with 4+ years building production-grade web applications in React.js, Next.js, and TypeScript across SaaS, fintech, and healthcare. Open to remote roles."
         />
         <meta
           name="keywords"
@@ -83,34 +83,34 @@ export default function RootLayout({
         />
         <meta
           property="og:title"
-          content="Full-Stack Developer Services | Emmanuel Omonzebaguan"
+          content="Frontend Engineer | Emmanuel Omonzebaguan"
         />
         <meta
           property="og:description"
-          content="Hire Emmanuel Omonzebaguan for professional full-stack development services. Specializing in modern frontend technologies like React.js and Next.js, and robust backend systems with Node.js and databases, Emmanuel delivers custom web solutions tailored to your needs."
+          content="Frontend Engineer with 4+ years building production-grade web applications in React.js, Next.js, and TypeScript across SaaS, fintech, and healthcare. Open to remote roles."
         />
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://codeplan.vercel.app/"
+          content="https://codewithomonz.vercel.app/"
         />
         <meta
           property="og:image"
-          content="https://codeplan.vercel.app/profile.png"
+          content="https://codewithomonz.vercel.app/profile.png"
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@codecps" />
+        <meta name="twitter:site" content="@codewithomonz" />
         <meta
           name="twitter:title"
-          content="Full-Stack Developer Services | Emmanuel Omonzebaguan"
+          content="Frontend Engineer | Emmanuel Omonzebaguan"
         />
         <meta
           name="twitter:description"
-          content="Explore professional services in frontend and backend development by Emmanuel Omonzebaguan. From modern web interfaces to scalable backend systems, Emmanuel is your go-to developer for React.js, Next.js, and Node.js solutions."
+          content="Frontend Engineer with 4+ years building production-grade web applications in React.js, Next.js, and TypeScript across SaaS, fintech, and healthcare. Open to remote roles."
         />
         <meta
           name="twitter:image"
-          content="https://codeplan.vercel.app/profile.png"
+          content="https://codewithomonz.vercel.app/profile.png"
         />
         <link rel="icon" href="/favicon.ico" />
       </head>
